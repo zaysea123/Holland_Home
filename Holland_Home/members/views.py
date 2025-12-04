@@ -16,3 +16,8 @@ def login_user(request):
             return redirect('login_user')
     else:
         return render(request, 'login.html', {})
+    
+def logout_user(request):
+    logout(request)
+    messages.success(request, 'You have logged out successfully')
+    return redirect('/')
