@@ -246,3 +246,59 @@ margin: auto;
     order: 0; /* ensures items appear above the buttons */
 }
 
+
+
+/* Announcement and To-Do Input Areas */
+.announcement-input-area,
+.todo-input-area {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    gap: 10px;
+    margin-top: auto; /* push to the bottom of container */
+    border-top: 1px solid #ccc;
+    background-color: transparent; /* transparent inside the container */
+}
+
+.announcement-input,
+.todo-input {
+    flex-grow: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 14px;
+    outline: none;
+    background-color: #fdfdfd; /* subtle background for input */
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.announcement-input:focus,
+.todo-input:focus {
+    border-color: #b59d7f;
+    box-shadow: 0 0 5px rgba(181, 157, 127, 0.5);
+}
+
+.announcement-input::placeholder,
+.todo-input::placeholder {
+    color: #999;
+    font-size: 13px;
+}
+
+.announcement-send-btn,
+.todo-send-btn {
+    padding: 8px 14px;
+    background-color: #00555a;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.announcement-send-btn:hover,
+.todo-send-btn:hover {
+    background-color: #038389;
+    transform: translateY(-1px);
+   
+}
