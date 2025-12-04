@@ -10,8 +10,6 @@ body {
 
 /* Header Bar */
 header {
-    justify-content: space-between;
-    align-items: center;
     background-color:#00555a ; 
     padding: 15px 30px;
 }
@@ -24,7 +22,7 @@ header {
     line-height: 1;
     color: darkorange;
     text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
-
+    margin-right: auto; /* forces logo to the left */
 }
 
 
@@ -132,17 +130,15 @@ body {
 /* nav */
 nav {
     padding: 1rem;
-    display: flex;
-    background-color: #00555a    ;
 }
 
 /* ham menu */
 .ham-menu {
     height: 50px;
     width: 40px;
-    margin-left: auto;
+    cursor: pointer;
+    margin-left: 0; /* reset any previous margin */
     position: relative;
-    cursor: pointer; /* added to show pointer on hover */
 }
 
 .ham-menu h1 {
@@ -153,7 +149,7 @@ margin: auto;
 .ham-menu span {
     height: 5px;
     width: 100%;
-    background-color: #ffffff;
+    background-color: darkorange;
     border-radius: 25px;
     position: absolute;
     left: 50%;
@@ -168,7 +164,7 @@ margin: auto;
     top: 75%;
 }
 .ham-menu.active span {
-    background-color: white;
+    background-color: darkorange;
 }
 .ham-menu.active span:nth-child(1) {
     top: 50%;
@@ -208,12 +204,8 @@ margin: auto;
 }
 .top-nav {
     display: flex;
+    justify-content: space-between; /* logo left, ham-menu right */
     align-items: center;
-    justify-content: space-between;
-    background-color: #00555a ;
-    padding: 1rem 2rem;
-}
-header {
-    display: flex;
-    flex-direction: column;
+    background-color: #00555a;
+    padding: 15px 30px;
 }
