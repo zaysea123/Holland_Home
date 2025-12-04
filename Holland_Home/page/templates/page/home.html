@@ -50,11 +50,13 @@
 
     <main class="main-content">
         <div class="announcements">
-            <h2>🔔Announcements🔔 </h2>
+            <h2>🔔Announcements🔔</h2>
+            <div class="announcement-items"></div> <!-- container for dynamically added items -->
             <button class="add-announcement-btn">Add Announcement</button>
         </div>
         <div class="todo">
             <h2>📋To-Do List📋</h2>
+            <div class="todo-items"></div> <!-- container for dynamically added items -->
             <button class="add-todo-btn">Add To-Do</button>
         </div>
     </main>
@@ -74,6 +76,17 @@
       </span>
     </footer>
 
+<!-- Modal Overlay -->
+<div class="modal-overlay" id="modal">
+    <div class="modal-box">
+        <h3 class="modal-title" id="modal-title">Enter Item</h3>
+        <input type="text" class="modal-input" id="modal-input" placeholder="Type here...">
+        <div class="modal-buttons">
+            <button class="modal-btn cancel" id="modal-cancel">Cancel</button>
+            <button class="modal-btn confirm" id="modal-confirm">Add</button>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
