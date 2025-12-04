@@ -39,8 +39,7 @@ class Announcement(models.Model):
     title = models.CharField(max_length=255)
     content = models.TextField()
     created_at = models.DateTimeField()
-    admin = models.ForeignKey(Admin, on_delete=models.SET_NULL, null=True, blank=True, related_name='admin_announcements')
-
+    
     def __str__(self):
         return self.title
 
