@@ -21,7 +21,8 @@ body {
 .header .logo {
     font-size: 24px;
     font-weight: bold;
-    color: white;
+    color: darkorange;
+    
 }
 
 .header .burger {
