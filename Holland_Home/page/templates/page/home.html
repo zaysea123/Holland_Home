@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holland Home</title>
+    <link rel="stylesheet" href="{% static 'page/home.css' %}">
+</head>
+
+<body>
+
+    <header>
+
+    <div class="off-screen-menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="/chat">Chat</a></li>
+            <li><a href="#">Shopping ⬇</a></li>
+            <li><a href="#">Cleaning ⬇</a></li>
+            <li><a href="#">Contract ⬇</a></li>
+        </ul>
+    </div>
+
+    <nav class="top-nav">
+        <h1 class="logo">Holland Home</h1>
+
+        <div class="ham-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+</header>
+
+
+
+<script src="{% static 'page/js/home.js' %}"></script>
+
+
+
+
+    <section class="welcome">
+        <h1>Welcome back, User</h1>
+        <div class="user-box"></div>
+    </section>
+
+
+
+    <main class="main-content">
+        <div class="announcements">
+            <h2>🔔Announcements🔔 </h2>
+            <button class="add-announcement-btn">Add Announcement</button>
+        </div>
+        <div class="todo">
+            <h2>📋To-Do List📋</h2>
+            <button class="add-todo-btn">Add To-Do</button>
+        </div>
+    </main>
+
+
+    <section class="motto">
+        <h2>Student Housing, Student Harmony</h2>
+
+    </section>
+
+
+
+   <footer>
+        <span class="autor">
+        Authors: Marianna, Emre, Zay, Luuk, Daniel <br />
+        &copy; 2025 Holland Home. All rights reserved.<br />
+      </span>
+    </footer>
+
+
+</body>
+</html>

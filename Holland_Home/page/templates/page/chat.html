@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holland Home - Chat</title>
+    <link rel="stylesheet" href="{% static 'page/chat.css' %}">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Holland Home</div>
+        <button class="burger">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+    </header>
+
+     <section class="chat-title">
+        <h1>Chat</h1>
+    </section>
+
+    <main class="main-content">
+        <div class="chat-container">
+            <section class="chat-content">
+                <div class="chat-message received">
+                    <span class="chat-sender">User1</span>
+                    <div class="chat-bubble">
+                        <p>Hello! How can I help you today?</p>
+                    </div>
+                    <span class="chat-time">10:24</span>
+                </div>
+
+                <div class="chat-message sent">
+                    <span class="chat-sender">User2</span>
+                    <div class="chat-bubble">
+                        <p>I am looking for a place to rent.</p>
+                    </div>
+                    <span class="chat-time">10:25</span>
+                </div>
+            </section>
+
+            <footer class="chat-input-area">
+                <input type="text" class="chat-input" placeholder="Type a message...">
+                <button class="chat-send-btn">Send</button>
+            </footer>
+        </div>
+    </main>
+</body>
+</html>
