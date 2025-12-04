@@ -13,7 +13,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #cbb799; /* Holland Home beige */
+    background-color: #00555a ; /* Holland Home beige */
     padding: 15px 30px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
@@ -109,7 +109,7 @@ body {
 }
 
 .chat-message.sent .chat-bubble {
-    background-color: #cbb799;
+    background-color: #00555a ;
     color: #fff;
     border-bottom-right-radius: 4px;
 }
