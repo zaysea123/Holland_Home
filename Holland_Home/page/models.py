@@ -1,3 +1,60 @@
 from django.db import models
+from django.contrib.auth.models import User
 
-# Create your models here.
+class Tenant(models.Model):
+    tenant_id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+
+class Admin(models.Model):
+    id = models.AutoField(primary_key=True)
+
+    def __str__(self):
+        return f"Admin {self.id}"
+
+
+class TaskType(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.name
+
+
+class Room(models.Model):
+    id = models.AutoField(primary_key=True)
+    tenant = models.ForeignKey(Tenant, on_delete=models.SET_NULL, null=True, blank=True)
+
+    def __str__(self):
+        return f"Room {self.id}"
+
+
+class Announcement(models.Model):
+    id = models.AutoField(primary_key=True)
+    author = models.ForeignKey(Admin, on_delete=models.CASCADE)
+    title = models.CharField(max_length=255)
+    content = models.TextField()
+    created_at = models.DateTimeField()
+    admin = models.ForeignKey(Admin, on_delete=models.SET_NULL, null=True, blank=True, related_name='admin_announcements')
+
+    def __str__(self):
+        return self.title
+
+
+class Task(models.Model):
+    id = models.AutoField(primary_key=True)
+    task_type = models.ForeignKey(TaskType, on_delete=models.CASCADE)
+    date_due = models.DateTimeField()
+    date_done = models.DateTimeField(null=True, blank=True)
+    date_added = models.DateTimeField(auto_now_add=True)
+    
+    tenant = models.ForeignKey(Tenant, on_delete=models.SET_NULL, null=True, blank=True)
+    room1 = models.ForeignKey(Room, on_delete=models.SET_NULL, null=True, blank=True, related_name='tasks_primary')
+    room2 = models.ForeignKey(Room, on_delete=models.SET_NULL, null=True, blank=True, related_name='tasks_secondary')
+
+    def __str__(self):
+        return f"Task {self.id} - {self.task_type.name}"
