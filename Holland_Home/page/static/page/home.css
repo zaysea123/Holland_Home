@@ -21,7 +21,6 @@ header {
     font-weight: 700;
     line-height: 1;
     color: darkorange;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
     margin-right: auto; /* forces logo to the left */
 }
 
@@ -45,12 +44,14 @@ header {
     justify-content: flex-start;
     background-color: #d3d3d3;
     width: 48%;
-    min-height: 500px;
+    min-height: 500px; /* restored original default height */
+    max-height: none; /* allow growth */
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     box-sizing: border-box;
-     text-align: center;
+    text-align: center;
+    overflow-y: auto; /* allows scrolling if content exceeds container */
 }
 
 
@@ -208,4 +209,38 @@ margin: auto;
     align-items: center;
     background-color: #00555a;
     padding: 15px 30px;
+}
+
+/* Individual Announcement and To-Do Items */
+.announcement-item,
+.todo-item {
+    background-color: #ffffff;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.announcement-item:hover,
+.todo-item:hover {
+    background-color: #ffe6b3;
+    transform: translateY(-2px);
+}
+
+/* Ensure dynamically added items appear directly under the headings and above buttons */
+.announcements .announcement-items,
+.todo .todo-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* spacing between items */
+    margin-top: 10px; /* spacing from heading */
+}
+
+.announcements .announcement-items .announcement-item,
+.todo .todo-items .todo-item {
+    order: 0; /* ensures items appear above the buttons */
 }
