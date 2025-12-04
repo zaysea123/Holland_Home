@@ -9,4 +9,4 @@ document.addEventListener("DOMContentLoaded", () => {
         offScreenMenu.classList.toggle("active");
     });
 
-  
+})
