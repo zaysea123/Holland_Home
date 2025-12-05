@@ -13,7 +13,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #00555a ; /* Holland Home beige */
+    background-color: #00555a; 
     padding: 15px 30px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
@@ -24,22 +24,82 @@ body {
     color: darkorange;
 }
 
-.header .burger {
+.ham-menu {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 24px;
-    height: 18px;
+    align-items: center;
     background: none;
     border: none;
-    cursor: pointer;
+    padding: 5px 0;
+    position: relative;
+    z-index: 1010; /* added to stay above off-screen menu */
 }
 
-.header .burger .line {
+.ham-menu span {
+    display: block;
     width: 100%;
-    height: 3px;
-    background-color: #333;
-    border-radius: 2px;
+    height: 4px;
+    background-color: darkorange;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+.ham-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+.ham-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* Off-Screen Menu */
+.off-screen-menu {
+    position: fixed;
+    top: 0;
+    right: -450px;
+    width: 300px;
+    max-width: 80%;
+    height: 100vh;
+    background-color: #00555a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+    transition: right 0.3s ease;
+    z-index: 1000; /* ensure hamburger stays above */
+}
+
+.off-screen-menu.active {
+    right: 0;
+}
+
+.off-screen-menu ul {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.off-screen-menu li {
+    width: 100%;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.off-screen-menu a {
+    color: darkorange;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.2s ease;
+}
+
+.off-screen-menu a:hover {
+    color: darkorange;
 }
 
 /* Main Content */
@@ -109,7 +169,7 @@ body {
 }
 
 .chat-message.sent .chat-bubble {
-    background-color: #00555a ;
+    background-color: #00555a;
     color: #fff;
     border-bottom-right-radius: 4px;
 }
@@ -168,7 +228,7 @@ body {
 }
 
 .chat-send-btn:hover {
-    background-color: #b59d7f;
+    background-color: #018a91;
     transform: translateY(-1px);
 }
 
